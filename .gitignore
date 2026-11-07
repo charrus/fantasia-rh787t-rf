@@ -1,0 +1,13 @@
+__pycache__/
+*.py[cod]
+.venv/
+secrets.yaml
+.env
+*.c64
+*.npy
+*.npz
+*.jsonl
+*.log
+*.jpg
+*.jpeg
+*.png

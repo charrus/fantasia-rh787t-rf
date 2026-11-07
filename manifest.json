@@ -1,0 +1,253 @@
+{
+  "schema_version": 1,
+  "remote": {
+    "family": "Fantasia / RH787T",
+    "compartment_label": "434",
+    "dip_bank": {
+      "1": "ON",
+      "2": "ON",
+      "3": "OFF",
+      "4": "ON"
+    },
+    "separate_light_switch": "D",
+    "light_behavior": "non-dimming toggle",
+    "working_transmit_frequency_hz": 433920000
+  },
+  "excluded_controls": {
+    "SET": "Learning/pairing: deliberately not captured or tested."
+  },
+  "waveforms": {
+    "speed_1": {
+      "mark_width_pattern": "0111010001000",
+      "source_sha256": "3a00f6b5b8b416e2b2e5248e9b470a53f7e60d71e7d55fe7ae9e47a2e3124f77",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 27,
+        "0.5": 27,
+        "0.75": 27
+      },
+      "selected_start_seconds": 20.90981996537993,
+      "selected_packet_patterns": {
+        "0111010001000": 9,
+        "0111010000000": 3
+      },
+      "chosen_final_silence_us": 11800,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_1.json",
+      "duration_count": 312,
+      "airtime_us": 289640,
+      "total_transmissions": 1
+    },
+    "speed_2": {
+      "mark_width_pattern": "0111010001010",
+      "source_sha256": "d761469426306ca18b1704b64f989fc87080c64c21914454497e0d0a5f9767bd",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 28,
+        "0.5": 28,
+        "0.75": 28
+      },
+      "selected_start_seconds": 22.205139963235293,
+      "selected_packet_patterns": {
+        "0111010001010": 11,
+        "0111010000000": 1
+      },
+      "chosen_final_silence_us": 11800,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_2.json",
+      "duration_count": 312,
+      "airtime_us": 289680,
+      "total_transmissions": 1
+    },
+    "speed_3": {
+      "mark_width_pattern": "0111010010000",
+      "source_sha256": "3a00f6b5b8b416e2b2e5248e9b470a53f7e60d71e7d55fe7ae9e47a2e3124f77",
+      "matching_presses": 4,
+      "packets_by_threshold": {
+        "0.35": 32,
+        "0.5": 32,
+        "0.75": 32
+      },
+      "selected_start_seconds": 32.88057994556013,
+      "selected_packet_patterns": {
+        "0111010010000": 10,
+        "0111010000000": 2
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_3.json",
+      "duration_count": 312,
+      "airtime_us": 290220,
+      "total_transmissions": 1
+    },
+    "speed_4": {
+      "mark_width_pattern": "0111010011000",
+      "source_sha256": "3a00f6b5b8b416e2b2e5248e9b470a53f7e60d71e7d55fe7ae9e47a2e3124f77",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 26,
+        "0.5": 26,
+        "0.75": 26
+      },
+      "selected_start_seconds": 48.827999919156234,
+      "selected_packet_patterns": {
+        "0111010011000": 10,
+        "0111010000000": 2
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_4.json",
+      "duration_count": 312,
+      "airtime_us": 290820,
+      "total_transmissions": 1
+    },
+    "speed_5": {
+      "mark_width_pattern": "0111010100010",
+      "source_sha256": "45e6cad4f4335755ad390de576b2593f2cf9049729bfbba6bee6a921509acfb2",
+      "matching_presses": 2,
+      "packets_by_threshold": {
+        "0.35": 25,
+        "0.5": 25,
+        "0.75": 25
+      },
+      "selected_start_seconds": 21.37333996461249,
+      "selected_packet_patterns": {
+        "0111010100010": 10,
+        "0111010000000": 2
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_5.json",
+      "duration_count": 312,
+      "airtime_us": 289800,
+      "total_transmissions": 1
+    },
+    "speed_6": {
+      "mark_width_pattern": "0111010100000",
+      "source_sha256": "45e6cad4f4335755ad390de576b2593f2cf9049729bfbba6bee6a921509acfb2",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 24,
+        "0.5": 24,
+        "0.75": 24
+      },
+      "selected_start_seconds": 31.70421994750781,
+      "selected_packet_patterns": {
+        "0111010100000": 8,
+        "0111010000000": 4
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/speed_6.json",
+      "duration_count": 312,
+      "airtime_us": 290520,
+      "total_transmissions": 1
+    },
+    "off": {
+      "mark_width_pattern": "0111010000010",
+      "source_sha256": "45e6cad4f4335755ad390de576b2593f2cf9049729bfbba6bee6a921509acfb2",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 23,
+        "0.5": 23,
+        "0.75": 23
+      },
+      "selected_start_seconds": 40.29591993328267,
+      "selected_packet_patterns": {
+        "0111010000010": 8,
+        "0111010000000": 4
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/off.json",
+      "duration_count": 312,
+      "airtime_us": 291080,
+      "total_transmissions": 1
+    },
+    "reverse": {
+      "mark_width_pattern": "0111010000100",
+      "source_sha256": "fb48f779b4266cbe5ff0b04ced33ab7b116d73ee415354ce5aac3f13e40af437",
+      "matching_presses": 1,
+      "packets_by_threshold": {
+        "0.35": 8,
+        "0.5": 8,
+        "0.75": 8
+      },
+      "selected_start_seconds": 49.94311991730994,
+      "selected_packet_patterns": {
+        "0111010000100": 8,
+        "0111010000000": 4
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/reverse.json",
+      "duration_count": 312,
+      "airtime_us": 289760,
+      "total_transmissions": 1
+    },
+    "light_tap": {
+      "mark_width_pattern": "0111010000001",
+      "source_sha256": "fb48f779b4266cbe5ff0b04ced33ab7b116d73ee415354ce5aac3f13e40af437",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.35": 21,
+        "0.5": 21,
+        "0.75": 18
+      },
+      "selected_start_seconds": 55.71023990776141,
+      "selected_packet_patterns": {
+        "0111010000001": 7,
+        "0111010000000": 1
+      },
+      "chosen_final_silence_us": 11780,
+      "replay_status": "not_tested",
+      "path": "waveforms/light_tap.json",
+      "duration_count": 208,
+      "airtime_us": 193320,
+      "total_transmissions": 1
+    },
+    "light_hold": {
+      "mark_width_pattern": "0111010000001",
+      "source_sha256": "6acf58361ed3f365c606f02537a23d63aee1645a018c4fb1b0da8b64d21c6aa2",
+      "matching_presses": 3,
+      "packets_by_threshold": {
+        "0.12": 283,
+        "0.2": 283,
+        "0.3": 283
+      },
+      "selected_start_seconds": 23.45375996116797,
+      "selected_packet_patterns": {
+        "0111010000001": 102,
+        "0111010000000": 2
+      },
+      "chosen_final_silence_us": 11720,
+      "replay_status": "not_tested",
+      "path": "waveforms/light_hold.json",
+      "duration_count": 2704,
+      "airtime_us": 2531080,
+      "total_transmissions": 1
+    },
+    "speed_2_verified": {
+      "mark_width_pattern": "0111010001010",
+      "source_sha256": "d761469426306ca18b1704b64f989fc87080c64c21914454497e0d0a5f9767bd",
+      "selected_packet_patterns": {
+        "0111010001010": 9,
+        "0111010000000": 3
+      },
+      "chosen_final_silence_us": 11800,
+      "replay_status": "owner_confirmed_fan_started_at_speed_2",
+      "sent_at": "2026-11-07T19:21:31.073+00:00",
+      "note": "The exact successful waveform; differs from the alternative speed_2 candidate.",
+      "path": "waveforms/speed_2_verified.json",
+      "duration_count": 312,
+      "airtime_us": 289560,
+      "total_transmissions": 1
+    }
+  },
+  "capture_caveats": {
+    "speed_5": "One mixed press contained a speed-6-pattern packet; the saved candidate uses a clean press.",
+    "reverse": "One physical press with repeated consistent packets; no cross-press comparison yet.",
+    "light_tap": "Highest threshold damaged part of the last press; candidate uses the first complete press.",
+    "light_hold": "Higher thresholds fragmented held presses as signal amplitude fell. Thresholds 0.12, 0.2 and 0.3 recovered the same three complete packet sequences. Hold repeats the LIGHT pattern; no distinct dim opcode was observed. Owner confirms the light is non-dimming; this is a held-button diagnostic, not a brightness command."
+  }
+}
