@@ -1,11 +1,13 @@
 # Fantasia / RH787T RF remote findings
 
-Reverse-engineering notes and measured replay waveforms for a Fantasia ceiling-fan remote in the RH787T family. Captures were acquired through **SDR-MCP using real RTL-SDR IQ**. A complete speed-2 press was replayed through **Home Assistant's `eyocean.send_raw` action and an ESPHome CC1101 transmitter**; the owner confirmed that the stopped fan started at speed 2.
+Reverse-engineering notes and measured replay waveforms for a Fantasia ceiling-fan remote in the RH787T family. Captures were acquired through **[SDR-MCP](https://github.com/sandraschi/sdr-mcp) using real RTL-SDR IQ**. A complete speed-2 press was replayed through **Home Assistant's `eyocean.send_raw` action and an ESPHome CC1101 transmitter**; the owner confirmed that the stopped fan started at speed 2.
 
 This is a research/data repository, **not a complete Home Assistant fan integration or a universal RH787T encoder**.
 
 ## Hardware and settings
 
+- SDR receiver: [RTL-SDR device used for capture — Amazon UK listing supplied by the owner](https://www.amazon.co.uk/dp/B01GDN1T4S?ref=ppx_yo2ov_dt_b_fed_asin_title).
+- Capture software: [SDR-MCP](https://github.com/sandraschi/sdr-mcp). The capture instance included a local bounded raw-IQ recording extension.
 - Remote compartment sticker: **434**.
 - Numbered DIP bank: **1 ON, 2 ON, 3 OFF, 4 ON** (owner described these as UP, UP, DOWN, UP).
 - Separate switch above the bank: **D / ON**, confirmed in **D** position. It is a light-mode selector, not a fifth numbered address switch.
