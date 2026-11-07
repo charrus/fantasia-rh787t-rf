@@ -4,6 +4,12 @@ Reverse-engineering notes and measured replay waveforms for a Fantasia ceiling-f
 
 This is a research/data repository, **not a complete Home Assistant fan integration or a universal RH787T encoder**.
 
+## Remote reference photo
+
+[![White ANDERIC replacement remote with six speed buttons, stop, reverse and light controls](https://m.media-amazon.com/images/I/51IS9i3G3ZL._AC_SL1500_.jpg)](https://www.amazon.co.uk/Anderic-Replacement-Casablanca-Compatible-RH787T-white/dp/B0DHDDQLT5?crid=KWWMTVGJZRP7&dib=eyJ2IjoiMSJ9.gNCwdDNIMYzcwGDsCHTqkZB6rc9v0bCQNeCBoi-mWOk.10h_IPQXMW9rzMV0zCfxG86GPryoda5iavLz9NT8bkE&dib_tag=se&keywords=rh787t&qid=1794083224&sprefix=rh787t%2Caps%2C120&sr=8-1)
+
+Product photo from the linked Amazon UK listing for the Anderic RR787T replacement. It illustrates the remote family, **not the exact unit tested**; compatibility with this fan has not been tested. The image is externally hosted and is not covered by this repository's MIT license.
+
 ## Hardware and settings
 
 - SDR receiver: [RTL-SDR device used for capture — Amazon UK listing supplied by the owner](https://www.amazon.co.uk/dp/B01GDN1T4S?ref=ppx_yo2ov_dt_b_fed_asin_title).
@@ -48,7 +54,7 @@ Use **[speed_2_verified.json](waveforms/speed_2_verified.json)** as the physical
 - Initial condition: owner confirmed fan visibly stopped.
 - Owner's result: **fan started at speed 2**.
 
-All ten other waveform files are **captured candidates, not physically replay-tested payloads**. The alternative speed-2 file is a different press from the same recording and does not inherit the verified file's success. An earlier speed-1 replay also worked, but it was a different payload and does not validate this repository's new speed-1 candidate.
+All ten other waveform files are **captured candidates, not physically replay-tested payloads**. The alternative speed-2 file contains a different press from the same recording and has not been replay-tested. An earlier speed-1 replay also worked, but it was a different payload and does not validate this repository's new speed-1 candidate.
 
 The successful trial was monitored by another real SDR recording, but that recording has not been analyzed as a transmitted-waveform comparison. HA success/timestamps alone do not prove correct RF output or appliance response. This trial does not establish why earlier attempts failed.
 
@@ -62,11 +68,11 @@ Each waveform JSON is an action mapping for **`eyocean.send_raw`**, provided by 
 4. Review the complete action before invoking it. In HA's YAML action editor, use the equivalent YAML mapping; the JSON files are also intended for API clients that accept action/data mappings.
 5. Send only an explicitly intended test and observe the real appliance. For start tests, confirm stopped blades first; for REV tests, wait for blades to stop fully.
 
-Timings are signed microseconds: **positive = RF mark, negative = space**. Measured internal gaps and trailing packets are retained. Multi-second human inter-press gaps are not transmitted. Final termination silence is explicitly chosen from the median internal gap, rather than claiming that the long interval after release is part of the command.
+Timings are signed microseconds: **positive = RF mark, negative = space**. Measured internal gaps and trailing packets are retained. Multi-second human inter-press gaps are not transmitted. Final termination silence uses the median internal gap rather than the long interval after release.
 
 No file or validation script transmits automatically. Comply with local spectrum and duty-cycle requirements. Do not assume a local ESPHome button-permission switch also blocks native HA RF proxy requests.
 
-## Why the community thread matters
+## Community protocol comparison
 
 The [September 2025 reply in the RH787T thread](https://community.home-assistant.io/t/dc-ceiling-fan-rf-remote-rh787t/386621/17) describes a closer short-frame variant than the original post's longer code example.
 
@@ -84,9 +90,9 @@ The [September 2025 reply in the RH787T thread](https://community.home-assistant
 | REV | `111011` | `010000111011` |
 | LIGHT | `111110` | `010000111110` |
 
-Our common trailing signature has inverted suffix `111111`; the published scripts likewise send a common trailing code, `010000111111`, after command frames. This is strong evidence of a shared command-field encoding, **not a complete validated encoder or proof of identical address, sync timing or carrier**. The contributor describes 303 MHz hardware; the suffix agreement does not change our demonstrated 433.92 MHz setup. Their exact command prefixes, timing values and repetition counts must not be copied as this remote's settings.
+Our common trailing signature has inverted suffix `111111`; the published scripts likewise send a common trailing code, `010000111111`, after command frames. This is strong evidence of a shared command-field encoding, **not a complete validated encoder or proof of identical address, sync timing or carrier**. The contributor describes 303 MHz hardware, not our demonstrated 433.92 MHz setup. Their exact command prefixes, timing values and repetition counts must not be copied as this remote's settings.
 
-The code examples in the table are attributed comparative data, not a copied firmware implementation. No third-party firmware, manual PDF, forum image or photograph is redistributed here.
+The code examples in the table are attributed comparative data, not a copied firmware implementation. No third-party firmware, manual PDF, forum image or photograph is stored in this repository; the product photo above is linked from Amazon's image host.
 
 ## Capture quality and limitations
 
@@ -96,7 +102,7 @@ The code examples in the table are attributed comparative data, not a copied fir
 - REV was captured from **one physical press**, with repeated consistent packets; cross-press verification remains outstanding.
 - The highest threshold damaged part of the last LIGHT-tap press; its candidate uses the first complete press.
 - Held LIGHT faded enough for high thresholds to fragment it. Thresholds 0.12, 0.2 and 0.3 recovered the same three complete held sequences. It repeats the ordinary LIGHT pattern; it is **not evidence of dimming** in this non-dimming configuration.
-- Raw IQ files and the remote photo are not distributed. [manifest.json](manifest.json) records source IQ SHA256s, selection offsets, threshold counts, packet composition and candidate status for traceability. Source hashes are provenance references, not a claim that readers can reproduce the IQ analysis from the waveform files alone.
+- Raw IQ files and the remote photo are not distributed. [manifest.json](manifest.json) records source IQ SHA256s, selection offsets, threshold counts, packet composition and candidate status for traceability. Source hashes identify the original recordings; the waveform files alone do not reproduce the IQ analysis.
 - Credentials, network addresses, household entity names and machine-local paths have been omitted. RF address information remains in the intentionally published waveforms.
 
 ## Validation
